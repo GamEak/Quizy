@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://media.istockphoto.com/id/1162198273/th/%E0%B9%80%E0%B8%A7%E0%B8%84%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C/%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A2%E0%B8%84%E0%B9%8D%E0%B8%B2%E0%B8%96%E0%B8%B2%E0%B8%A1%E0%B9%84%E0%B8%AD%E0%B8%84%E0%B8%AD%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AD%E0%B8%AD%E0%B8%81%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%AD%E0%B8%9A%E0%B9%80%E0%B8%A7%E0%B8%81%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%81%E0%B8%9A%E0%B8%99.jpg?s=612x612&w=0&k=20&c=nFidzHGc1i9qQbS71G-ehfyiozViNc75Im3H-L_2QKY="
+    />
+    <title>Quizy</title>
+
+    <link rel="stylesheet" href="oopQuizy.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div>
+        <h1>Quizy</h1>
+        <span>|</span>
+      </div>
+      <p>General Knowledge Quiz Challenge</p>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <!-- leftSide : Game Rule & Topic Choosing -->
+      <aside class="leftSide">
+        <!-- Section : Game Rule -->
+        <section class="gameRule">
+          <h2>Game Rules</h2>
+          <p>
+            Choose a topic and answer 5 multiple-choice questions. Each correct
+            answer lets you move on, but a wrong answer sends you into a Hangman
+            challenge. Guess the word before running out of lives to continue.
+            Lose the Hangman game and it’s Game Over. Survive all 5 questions to
+            win the game.
+          </p>
+        </section>
+        <!-- Section : Topic Choosing -->
+        <section class="topicChoosing">
+          <div class="topic-Header">
+            <h2>Choose your topic</h2>
+            <button>Reset Game</button>
+          </div>
+          <div class="topic-Choices">
+            <button>
+              <div>
+                <span>🎨</span>
+                <h3>Art</h3>
+              </div>
+              <p>Artworks, artists, and styles.</p>
+            </button>
+            <button>
+              <div>
+                <span>🏛️</span>
+                <h3>History</h3>
+              </div>
+              <p>Past events and historical figures.</p>
+            </button>
+            <button>
+              <div>
+                <span>📖</span>
+                <h3>Stories</h3>
+              </div>
+              <p>Stories, novels, and writers.</p>
+            </button>
+          </div>
+        </section>
+      </aside>
+
+      <!-- rightSide : Quiz Topic, Quiz & Mode-Hangman -->
+      <section class="rightSide">
+        <!-- Section : Quiz Topic -->
+        <section class="quizTopic">
+          <div>
+            <h2>Category :</h2>
+            <h3>History</h3>
+          </div>
+          <p>1/5</p>
+        </section>
+        <!-- Section : Quiz -->
+        <section class="quiz" hidden>
+          <p>The Great Wall is mainly associated with which country?</p>
+          <div class="quiz-Choices">
+            <button>
+              <span>A.</span>
+              <p>China</p>
+            </button>
+            <button>
+              <span>B.</span>
+              <p>Japan</p>
+            </button>
+            <button>
+              <span>C.</span>
+              <p>Korea</p>
+            </button>
+            <button>
+              <span>D.</span>
+              <p>India</p>
+            </button>
+          </div>
+        </section>
+        <!-- Section : Mode-Hangman -->
+        <section class="hangmanMode" hidden>
+          <div class="hangman-Hint">
+            <h4>Hint from the previous question :</h4>
+            <p>A large East Asian country with a famous wall.</p>
+          </div>
+          <div class="hangman-Word">
+            <!-- hangman-Word : Section - hangman-Drawing -->
+            <section class="hangman-Drawing"></section>
+            <!-- hangman-Word : Section - hangman-wordGuessing -->
+            <section class="hangman-wordGuessing">
+              <div class="hangman-Answer">
+                <input /><input /><input /><input /><input /><input />
+              </div>
+              <div class="lose">
+                <div>
+                  <div class="lose-Announce">
+                    <span>😭</span>
+                    <p>You lose !</p>
+                  </div>
+                  <div class="hangman-answerKey">
+                    <p>The word is <span>"TEST"</span>.</p>
+                  </div>
+                </div>
+                <button>New Game</button>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <!-- Win -->
+        <div class="win" hidden>
+          <p>YOU WIN !</p>
+          <button>New Game</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <hr />
+      <p>Built as an OOP JavaScript mini project.</p>
+    </footer>
+  </body>
+</html>

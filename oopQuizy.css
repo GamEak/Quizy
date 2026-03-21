@@ -1,0 +1,399 @@
+/* import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
+
+/* Reset-ish */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Google Sans Flex";
+}
+
+body {
+    margin: auto;
+    max-width: 96rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    font-weight: 100;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* HEADER */
+header>div>span {
+    font-size: xx-large;
+    font-weight: 50;
+}
+
+header>div {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    max-width: 96rem;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+@media (max-width: 48rem) {
+    header {
+        flex-direction: column;
+        align-items: start;
+        gap: 0.5rem;
+    }
+}
+
+/* MAIN */
+main {
+    flex: 1;
+    margin: 8.25rem 3rem 3rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 5rem;
+}
+
+@media (max-width: 48rem) {
+    main {
+        margin-top: 10.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+}
+
+/* Responsive Design : Mobile S */
+@media (max-width: 21.75rem) {
+    main {
+        margin-top: 11.25rem;
+    }
+}
+
+/* leftSide : Game Rules & Topic Choosing */
+.leftSide {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Section : Game Rule */
+.gameRule {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Section : Topic Choosing */
+/* topic-Header */
+button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 1.5rem;
+    background-color: white;
+    box-shadow: 3px 3px 5px 0.5px lightgray;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: translateY(-2.5px);
+}
+
+.topic-Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* topic-Choices */
+.topic-Choices>button>div>span {
+    font-size: 1.5rem;
+}
+
+.topic-Choices>button>div>h3 {
+    width: 5rem;
+    text-align: left;
+}
+
+.topic-Choices>button>div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.topic-Choices>button>p {
+    text-align: left;
+}
+
+@media (max-width: 48rem) {
+    .topic-Choices>button>p {
+        margin-left: 2.5rem;
+    }
+}
+
+.topic-Choices>button {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (max-width: 48rem) {
+    .topic-Choices>button {
+        flex-direction: column;
+        align-items: start;
+        gap: 0;
+    }
+}
+
+.topic-Choices>button.selected {
+    color: white;
+    background-color: gray;
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.topic-Choices>button.notSelected {
+    transform: translateY(0);
+}
+
+.topic-Choices {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.topicChoosing {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* rightSide : Quiz Topic, Quiz & Mode-Hangman */
+.rightSide {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Section : Quiz Topic */
+.quizTopic>div>h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.quizTopic>div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (max-width: 48rem) {
+    .quizTopic>div {
+        display: inline-block;
+    }
+}
+
+.quizTopic>p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.quizTopic {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+/* Section : Quiz */
+.quiz-Choices>button>p {
+    text-align: left;
+}
+
+.quiz-Choices>button {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.quiz-Choices {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 1rem;
+}
+
+@media (max-width: 48rem) {
+    .quiz-Choices {
+        grid-template-columns: 1fr;
+    }
+}
+
+.quiz {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Section : Mode-Hangman */
+.hangmanMode {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* hangman-Hint */
+.hangman-Hint>h4 {
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.hangman-Hint {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+/* hangman-Word */
+/* hangman-Word : Section - hangman-Drawing */
+.hangman-Drawing {
+    width: 40%;
+    aspect-ratio: 1 / 1;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+@media (max-width: 48rem) {
+    .hangman-Drawing {
+        margin: auto;
+        width: 100%;
+        max-width: 20rem;
+    }
+}
+
+/* hangman-Word : Section - hangman-wordGuessing */
+/* hangman-Answer */
+.hangman-Answer>input {
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.hangman-Answer {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* lose */
+/* lose-Announce */
+.lose-Announce>span {
+    font-size: 2rem;
+}
+
+.lose-Announce>p {
+    font-size: 1.5rem;
+    font-weight: 650;
+}
+
+.lose-Announce {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* hangman-answerKey */
+.hangman-answerKey>p>span {
+    font-weight: 500
+}
+
+.lose>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+@media (max-width: 48rem) {
+    .lose>div {
+        flex-direction: column;
+    }
+}
+
+.lose {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.hangman-wordGuessing {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+@media (max-width: 48rem) {
+    .hangman-wordGuessing {
+        width: 100%;
+    }
+}
+
+.hangman-Word {
+    display: flex;
+    gap: 1.5rem;
+}
+
+@media (max-width: 48rem) {
+    .hangman-Word {
+        flex-direction: column;
+    }
+}
+
+/* Win */
+.win {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.win>p {
+    font-size: 2.75rem;
+    font-weight: 650;
+}
+
+/* FOOTER */
+footer>p {
+    margin: 1.5rem 3rem;
+    font-weight: 500;
+}
