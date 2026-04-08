@@ -42,8 +42,8 @@
             <h2>Choose your topic</h2>
             <button>Reset Game</button>
           </div>
-          <div class="topic-Choices">
-            <button>
+          <div class="topic-Choices" id="categoryContainer">
+            <!-- <button>
               <div>
                 <span>🎨</span>
                 <h3>Art</h3>
@@ -63,25 +63,27 @@
                 <h3>Stories</h3>
               </div>
               <p>Stories, novels, and writers.</p>
-            </button>
+            </button> -->
           </div>
         </section>
       </aside>
 
-      <!-- rightSide : Quiz Topic, Quiz & Mode-Hangman -->
+      <!-- rightSide : Quiz Description, Quiz & Mode-Hangman -->
       <section class="rightSide">
-        <!-- Section : Quiz Topic -->
-        <section class="quizTopic">
+        <!-- Section : Quiz Description -->
+        <section class="quizDescription">
           <div>
             <h2>Category :</h2>
-            <h3>History</h3>
+            <h3 id="quizDescription-category"></h3>
           </div>
-          <p>1/5</p>
+          <p id="quizDescription-number">0/5</p>
         </section>
         <!-- Section : Quiz -->
-        <section class="quiz" hidden>
-          <p>The Great Wall is mainly associated with which country?</p>
-          <div class="quiz-Choices">
+        <section class="quiz" id="quizContainer" hidden>
+          <p id="quizQuestion">
+            The Great Wall is mainly associated with which country?
+          </p>
+          <div class="quiz-Choices" id="quizChoiceContainer">
             <button>
               <span>A.</span>
               <p>China</p>
@@ -101,18 +103,24 @@
           </div>
         </section>
         <!-- Section : Mode-Hangman -->
-        <section class="hangmanMode" hidden>
+        <section class="hangmanMode" id="hangmanModeContainer" hidden>
           <div class="hangman-Hint">
             <h4>Hint from the previous question :</h4>
-            <p>A large East Asian country with a famous wall.</p>
+            <p id="hangmanHint">
+              A large East Asian country with a famous wall.
+            </p>
           </div>
           <div class="hangman-Word">
             <!-- hangman-Word : Section - hangman-Drawing -->
-            <section class="hangman-Drawing"></section>
+            <section class="hangman-Drawing" id="hangmanVisualContainer">
+              <img src="./public/hangman6.png" alt="" />
+            </section>
             <!-- hangman-Word : Section - hangman-wordGuessing -->
             <section class="hangman-wordGuessing">
-              <div class="hangman-Answer">
-                <input /><input /><input /><input /><input /><input />
+              <div class="hangman-Answer" id="hangmanAnswerContainer">
+                <!-- <input /><input /><input /><input /><input /><input /> -->
+                <span>N</span><span>E</span><span>W</span><span class="spacebar"></span><span>Y</span><span>O</span
+                ><span>R</span><span>K</span>
               </div>
               <div class="lose">
                 <div>
@@ -143,5 +151,11 @@
       <hr />
       <p>Built as an OOP JavaScript mini project.</p>
     </footer>
+
+    <script src="./quiz.js"></script>
+    <script src="./hangman.js"></script>
+    <script src="./ui.js"></script>
+    <script src="./gameController.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>
