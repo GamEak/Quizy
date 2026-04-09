@@ -17,6 +17,11 @@ class UI {
     this.hangmanAnswer = document.getElementById("hangmanAnswerContainer");
     this.hangmanParts = [];
     this.hangmanVisual = document.getElementById("hangmanVisualContainer");
+
+    // Win/Lose
+    this.win = document.getElementById("winContainer");
+    this.lose = document.getElementById("loseContainer");
+    this.hangmanCorrectAnswer = document.getElementById("correctAnswer");
   }
 
   showCategory(categories) {
@@ -80,13 +85,12 @@ class UI {
     // Disable all choices
     Array.from(button).forEach((btn) => (btn.disabled = true));
     // Highlight selected choice
-    choices.forEach((choice, index) => {
-      if (choice.correct) {
-        button[index].classList.add("correctChoose");
-      } else if (!choice.correct && index === selectedIndex) {
-        button[index].classList.add("wrongChoose");
-      }
-    });
+    const selectedChoice = choices[selectedIndex];
+    if (selectedChoice.correct) {
+      button[selectedIndex].classList.add("correctChoose");
+    } else {
+      button[selectedIndex].classList.add("wrongChoose");
+    }
   }
 
   showHangman(hint, word) {
@@ -142,7 +146,7 @@ class UI {
 
   updateHangmanVisual(mistakes) {
     this.hangmanParts?.forEach((part, index) => {
-      if (mistakes <= index) {
+      if (index === mistakes) {
         return part.classList.remove("invisibleHangmanPart");
       } else {
         return part.classList.add("invisibleHangmanPart");
@@ -156,7 +160,16 @@ class UI {
     });
   }
 
-  resetGame() {
+  showWin() {
+    this.win.hidden = false;
+  }
+
+  showLose(word) {
+    this.lose.hidden = false;
+    this.hangmanCorrectAnswer.innerText = `"${word.join("")}"`;
+  }
+
+  resetGameScreen() {
     // Reset choosing topic
     Array.from(this.topic.children).forEach((btn) => {
       btn.disabled = false;
@@ -181,5 +194,9 @@ class UI {
     this.clearHangmanVisual();
 
     this.hangman.hidden = true;
+
+    // Win/Lose
+    this.win.hidden = true;
+    this.lose.hidden = true;
   }
 }

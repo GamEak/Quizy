@@ -122,14 +122,14 @@
                 <span>N</span><span>E</span><span>W</span><span class="spacebar"></span><span>Y</span><span>O</span
                 ><span>R</span><span>K</span>
               </div>
-              <div class="lose">
+              <div class="lose" id="loseContainer" hidden>
                 <div>
                   <div class="lose-Announce">
                     <span>😭</span>
                     <p>You lose !</p>
                   </div>
                   <div class="hangman-answerKey">
-                    <p>The word is <span>"TEST"</span>.</p>
+                    <p>The word is <span id="correctAnswer">"TEST"</span>.</p>
                   </div>
                 </div>
                 <button>New Game</button>
@@ -139,7 +139,7 @@
         </section>
 
         <!-- Win -->
-        <div class="win" hidden>
+        <div class="win" id="winContainer" hidden>
           <p>YOU WIN !</p>
           <button>New Game</button>
         </div>

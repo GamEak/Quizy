@@ -5,6 +5,7 @@ class GameController {
     this.number = 0;
     this.question = {};
     this.hangman = null;
+    this.gameOver = false;
   }
 
   chooseTopic(topic) {
@@ -54,8 +55,10 @@ class GameController {
     const guessingResult = this.hangman.guess(letter);
     const isHangmanRoundDone = this.hangman.adjudge();
     if (isHangmanRoundDone === "lose") {
+      this.gameOver = true;
       return {
         hangmanStatus: isHangmanRoundDone,
+        mistakeTotal: this.hangman.mistakes,
         correctAnswer: this.hangman.getAnswer(),
       };
     } else if (isHangmanRoundDone === "hangmanWin") {
@@ -71,5 +74,14 @@ class GameController {
         guessedLetterDisplay: this.hangman.displayWord(),
       };
     }
+  }
+
+  // Reset Game
+  resetGameLogic() {
+    this.topic = null;
+    this.number = 0;
+    this.question = {};
+    this.hangman = null;
+    this.gameOver = false;
   }
 }
