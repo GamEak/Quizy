@@ -124,13 +124,13 @@ class UI {
     this.hangmanVisual.innerHTML = "";
     this.hangmanParts = [];
     const parts = [
-      "hangman0.png",
-      "hangman1.png",
-      "hangman2.png",
-      "hangman3.png",
-      "hangman4.png",
-      "hangman5.png",
-      "hangman6.png",
+      "/public/hangman0.png",
+      "/public/hangman1.png",
+      "/public/hangman2.png",
+      "/public/hangman3.png",
+      "/public/hangman4.png",
+      "/public/hangman5.png",
+      "/public/hangman6.png",
     ];
     parts.forEach((part, index) => {
       const img = document.createElement("img");
@@ -161,6 +161,7 @@ class UI {
   }
 
   showWin() {
+    this.quiz.hidden = true;
     this.win.hidden = false;
   }
 
