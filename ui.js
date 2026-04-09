@@ -124,13 +124,13 @@ class UI {
     this.hangmanVisual.innerHTML = "";
     this.hangmanParts = [];
     const parts = [
-      "/public/hangman0.png",
-      "/public/hangman1.png",
-      "/public/hangman2.png",
-      "/public/hangman3.png",
-      "/public/hangman4.png",
-      "/public/hangman5.png",
-      "/public/hangman6.png",
+      "/hangmanImage/hangman0.png",
+      "/hangmanImage/hangman1.png",
+      "/hangmanImage/hangman2.png",
+      "/hangmanImage/hangman3.png",
+      "/hangmanImage/hangman4.png",
+      "/hangmanImage/hangman5.png",
+      "/hangmanImage/hangman6.png",
     ];
     parts.forEach((part, index) => {
       const img = document.createElement("img");
