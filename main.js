@@ -89,13 +89,13 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   // Reset Game
-  const resetGameButton = document.querySelectorAll(
-    ".topic-Header button, .win button, .lose button",
-  );
-  resetGameButton.foreach((btn) =>
-    btn.addEventListener("click", () => {
-      gameController.resetGameLogic();
-      ui.resetGameScreen();
-    }),
-  );
+  document.addEventListener("click", (e) => {
+    const button = e.target.closest(
+      ".topic-Header button, .win button, .lose button",
+    );
+    if (!button) return;
+
+    gameController.resetGameLogic();
+    ui.resetGameScreen();
+  });
 });
