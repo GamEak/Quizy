@@ -16,8 +16,8 @@ class GameController {
     };
   }
 
-  getQuestion() {
-    this.number++;
+  getQuestion(correctQuiz = true) {
+    if (correctQuiz) this.number++;
 
     const ask = this.quizy.randomQuestion(this.topic);
     this.question = {
@@ -64,7 +64,7 @@ class GameController {
     } else if (isHangmanRoundDone === "hangmanWin") {
       return {
         hangmanStatus: isHangmanRoundDone,
-        nextQuestion: this.getQuestion(),
+        nextQuestion: this.getQuestion(false),
       };
     } else {
       return {

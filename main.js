@@ -58,18 +58,13 @@ window.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   });
 
-  // Hangman keyboard input
-  document.addEventListener("keydown", (e) => {
-    // Prevent input if the hangman isn't active
-    if (!gameController.hangman) return;
-    // Prevent input if the hangman's already over
-    if (gameController.gameOver) return;
+  // Alphabet button input for hangman
+  ui.alphabet.addEventListener("click", (e) => {
+    const button = e.target.closest("button");
+    if (!button) return;
 
-    const key = e.key;
-    // Ignore input if not in Hangman mode
-    if (!key || key.length !== 1) return;
-    const letter = key.toUpperCase();
-    if (!/[A-Z]/.test(letter)) return;
+    const letter = button.dataset.letter;
+    ui.selectedLetter(letter);
 
     const result = gameController.hangman_eachTimeGuessing(letter);
     if (result.hangmanStatus === "lose") {

@@ -15,6 +15,7 @@ class UI {
     this.hangman = document.getElementById("hangmanModeContainer");
     this.hint = document.getElementById("hangmanHint");
     this.hangmanAnswer = document.getElementById("hangmanAnswerContainer");
+    this.alphabet = document.getElementById("alphabetContainer");
     this.hangmanParts = [];
     this.hangmanVisual = document.getElementById("hangmanVisualContainer");
 
@@ -97,6 +98,7 @@ class UI {
     // Display : hide quiz & show hangman
     this.quiz.hidden = true;
     this.hangman.hidden = false;
+    this.alphabet.hidden = false;
 
     this.hint.innerText = hint;
     this.createHangmanParts();
@@ -104,6 +106,41 @@ class UI {
     // Create initial guess space display for answering hangman answer
     const guessSpace = word.split("").map((ch) => (ch === " " ? " " : "_"));
     this.updateWordDisplay(guessSpace);
+    // Create alphabet buttons to input the hangman answer
+    // this.showAlphabet();
+    const alphabetLetter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const letters = alphabetLetter.split("");
+    this.alphabet.innerHTML = "";
+    letters.forEach((letter) => {
+      const button = document.createElement("button");
+      button.dataset.letter = letter;
+      button.innerText = letter;
+
+      this.alphabet.appendChild(button);
+    });
+  }
+
+  // showAlphabet() {
+  //   const alphabetLetter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  //   const letters = alphabetLetter.split("");
+  //   this.alphabet.innerHTML = "";
+  //   letters.forEach((letter) => {
+  //     const button = document.createElement("button");
+  //     button.dataset.letter = letter;
+  //     button.innerText = letter;
+
+  //     this.alphabet.appendChild(button);
+  //   });
+  // }
+
+  selectedLetter(chosenLetter) {
+    const button = this.alphabet.children;
+    Array.from(button).forEach((btn) => {
+      if (btn.dataset.letter === chosenLetter) {
+        btn.disabled = true;
+        btn.classList.add("selectedAlphabet");
+      }
+    });
   }
 
   updateWordDisplay(guessWord) {
@@ -166,6 +203,7 @@ class UI {
   }
 
   showLose(word) {
+    this.alphabet.hidden = true;
     this.lose.hidden = false;
     this.hangmanCorrectAnswer.innerText = `"${word.join("")}"`;
   }
@@ -180,7 +218,7 @@ class UI {
     // Quiz : Quiz Description, Quiz & Choices
     // Quiz Description
     this.quizDesCate.innerText = "";
-    this.quizDesNum.innerText = "";
+    this.quizDesNum.innerText = "0/5";
     // Quiz & Choices
     this.question.innerText = "";
     this.choices.innerHTML = "";
@@ -190,6 +228,7 @@ class UI {
     // Hangman
     this.hint.innerText = "";
     this.hangmanAnswer.innerHTML = "";
+    this.alphabet.innerHTML = "";
     this.hangmanVisual.innerHTML = "";
     this.hangmanParts = [];
     this.clearHangmanVisual();
