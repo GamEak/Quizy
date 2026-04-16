@@ -71,12 +71,15 @@ window.addEventListener("DOMContentLoaded", () => {
       ui.updateHangmanVisual(result.mistakeTotal);
       ui.showLose(result.correctAnswer);
     } else if (result.hangmanStatus === "hangmanWin") {
-      ui.showQuiz({
-        category: gameController.topic,
-        number: gameController.number,
-        question: result.nextQuestion.ask.question,
-        choices: result.nextQuestion.choices,
-      });
+      ui.updateWordDisplay(result.guessedLetterDisplay);
+      setTimeout(() => {
+        ui.showQuiz({
+          category: gameController.topic,
+          number: gameController.number,
+          question: result.nextQuestion.ask.question,
+          choices: result.nextQuestion.choices,
+        });
+      }, 1500);
     } else {
       ui.updateWordDisplay(result.guessedLetterDisplay);
       ui.updateHangmanVisual(result.mistakeTotal);

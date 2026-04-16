@@ -64,6 +64,7 @@ class GameController {
     } else if (isHangmanRoundDone === "hangmanWin") {
       return {
         hangmanStatus: isHangmanRoundDone,
+        guessedLetterDisplay: this.hangman.displayWord(),
         nextQuestion: this.getQuestion(false),
       };
     } else {

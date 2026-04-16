@@ -48,7 +48,7 @@ class HangmanRound {
     let hasEmptySpace = false;
     for (let i = 0; i < this.hangmanAnswer.length; i++) {
       // Skip spaces
-      if (this.hangmanAnswer[i] !== " ") continue;
+      if (this.hangmanAnswer[i] === " ") continue;
       // Check if guessedLetters doesn't have hangmanAnswer[i] letter
       if (!this.guessedLetters.has(this.hangmanAnswer[i])) {
         hasEmptySpace = true;
