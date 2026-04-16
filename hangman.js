@@ -29,7 +29,9 @@ class HangmanRound {
     const displayLetters = [];
 
     for (let i = 0; i < this.hangmanAnswer.length; i++) {
-      if (this.guessedLetters.has(this.hangmanAnswer[i])) {
+      if (this.hangmanAnswer[i] === " ") {
+        displayLetters.push(" ");
+      } else if (this.guessedLetters.has(this.hangmanAnswer[i])) {
         displayLetters.push(this.hangmanAnswer[i]);
       } else {
         displayLetters.push("_");
@@ -45,6 +47,8 @@ class HangmanRound {
 
     let hasEmptySpace = false;
     for (let i = 0; i < this.hangmanAnswer.length; i++) {
+      // Skip spaces
+      if (this.hangmanAnswer[i] !== " ") continue;
       // Check if guessedLetters doesn't have hangmanAnswer[i] letter
       if (!this.guessedLetters.has(this.hangmanAnswer[i])) {
         hasEmptySpace = true;

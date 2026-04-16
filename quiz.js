@@ -7,6 +7,7 @@ class Question {
     answerIndex,
     hangmanHint,
     hangmanAnswer,
+    // hangmanAnswerDescription
   }) {
     this.id = id;
     this.category = category;
@@ -153,249 +154,382 @@ quizy.addQuestion(
     hangmanAnswer: "Louvre",
   }),
 );
-quizy.addQuestion(
-  new Question({
-    id: "art02",
-    category: "Art",
-    question: "Which artist painted The Starry Night?",
-    choices: [
-      "Vincent van Gogh",
-      "Claude Monet",
-      "Pablo Picasso",
-      "Salvador Dalí",
-    ],
-    answerIndex: 0,
-    hangmanHint: "The country where Van Gogh was born.",
-    hangmanAnswer: "Netherlands",
-  }),
-);
-quizy.addQuestion(
-  new Question({
-    id: "art03",
-    category: "Art",
-    question:
-      "Which artist is famous for the painting 'The Persistence of Memory'?",
-    choices: [
-      "Salvador Dalí",
-      "Pablo Picasso",
-      "Henri Matisse",
-      "Edvard Munch",
-    ],
-    answerIndex: 0,
-    hangmanHint: "The art movement Dalí belonged to.",
-    hangmanAnswer: "Surrealism",
-  }),
-);
-quizy.addQuestion(
-  new Question({
-    id: "art04",
-    category: "Art",
-    question: "Which artist helped start the Cubism movement?",
-    choices: [
-      "Pablo Picasso",
-      "Claude Monet",
-      "Michelangelo",
-      "Leonardo da Vinci",
-    ],
-    answerIndex: 0,
-    hangmanHint: "The country where Picasso was born.",
-    hangmanAnswer: "Spain",
-  }),
-);
-quizy.addQuestion(
-  new Question({
-    id: "art05",
-    category: "Art",
-    question: "Which artist painted many water lily paintings?",
-    choices: ["Claude Monet", "Vincent van Gogh", "Rembrandt", "Edgar Degas"],
-    answerIndex: 0,
-    hangmanHint: "The art movement Monet helped lead.",
-    hangmanAnswer: "Impressionism",
-  }),
-);
-quizy.addQuestion(
-  new Question({
-    id: "art06",
-    category: "Art",
-    question:
-      "Which Renaissance artist painted the ceiling of the Sistine Chapel?",
-    choices: ["Michelangelo", "Raphael", "Leonardo da Vinci", "Donatello"],
-    answerIndex: 0,
-    hangmanHint: "The city where the Sistine Chapel is located.",
-    hangmanAnswer: "Vatican",
-  }),
-);
+quizy.addQuestion({
+  id: "art02",
+  category: "Art",
+  question: "Who painted Starry Night?",
+  choices: [
+    "Vincent van Gogh",
+    "Leonardo da Vinci",
+    "Edvard Munch",
+    "Salvador Dali",
+  ],
+  answerIndex: 0,
+  hangmanHint: "The city where the Starry Night museum is located.",
+  hangmanAnswer: "New York",
+});
+quizy.addQuestion({
+  id: "art03",
+  category: "Art",
+  question: "Who painted The Persistence of Memory?",
+  choices: ["Salvador Dali", "Pablo Picasso", "Claude Monet", "Rembrandt"],
+  answerIndex: 0,
+  hangmanHint: "The country where Salvador Dali was born.",
+  hangmanAnswer: "Spain",
+});
+quizy.addQuestion({
+  id: "art04",
+  category: "Art",
+  question: "Who painted The Scream?",
+  choices: ["Edvard Munch", "Vincent van Gogh", "Claude Monet", "Paul Cezanne"],
+  answerIndex: 0,
+  hangmanHint: "The country where The Scream artist was from.",
+  hangmanAnswer: "Norway",
+});
+quizy.addQuestion({
+  id: "art05",
+  category: "Art",
+  question: "Who painted Water Lilies?",
+  choices: [
+    "Claude Monet",
+    "Pablo Picasso",
+    "Vincent van Gogh",
+    "Henri Matisse",
+  ],
+  answerIndex: 0,
+  hangmanHint: "The country where Claude Monet lived.",
+  hangmanAnswer: "France",
+});
+quizy.addQuestion({
+  id: "art06",
+  category: "Art",
+  question: "Who painted Guernica?",
+  choices: ["Pablo Picasso", "Salvador Dali", "Joan Miro", "Henri Matisse"],
+  answerIndex: 0,
+  hangmanHint: "The country where Picasso was born.",
+  hangmanAnswer: "Spain",
+});
+quizy.addQuestion({
+  id: "art07",
+  category: "Art",
+  question: "Who sculpted David?",
+  choices: ["Michelangelo", "Donatello", "Bernini", "Raphael"],
+  answerIndex: 0,
+  hangmanHint: "The city where the statue of David is located.",
+  hangmanAnswer: "Florence",
+});
+quizy.addQuestion({
+  id: "art08",
+  category: "Art",
+  question: "Who painted The Night Watch?",
+  choices: ["Rembrandt", "Vermeer", "Van Gogh", "Rubens"],
+  answerIndex: 0,
+  hangmanHint: "The city where The Night Watch is displayed.",
+  hangmanAnswer: "Amsterdam",
+});
+quizy.addQuestion({
+  id: "art09",
+  category: "Art",
+  question: "Who painted Girl with a Pearl Earring?",
+  choices: ["Johannes Vermeer", "Rembrandt", "Van Gogh", "Rubens"],
+  answerIndex: 0,
+  hangmanHint: "The city where this painting is displayed.",
+  hangmanAnswer: "Hague",
+});
+quizy.addQuestion({
+  id: "art10",
+  category: "Art",
+  question: "Who painted The Birth of Venus?",
+  choices: [
+    "Sandro Botticelli",
+    "Leonardo da Vinci",
+    "Raphael",
+    "Michelangelo",
+  ],
+  answerIndex: 0,
+  hangmanHint: "The city where this painting is displayed.",
+  hangmanAnswer: "Florence",
+});
+quizy.addQuestion({
+  id: "art11",
+  category: "Art",
+  question: "Who painted Campbell's Soup Cans?",
+  choices: [
+    "Andy Warhol",
+    "Roy Lichtenstein",
+    "Jackson Pollock",
+    "Keith Haring",
+  ],
+  answerIndex: 0,
+  hangmanHint: "The art style Andy Warhol is famous for.",
+  hangmanAnswer: "Pop Art",
+});
+quizy.addQuestion({
+  id: "art12",
+  category: "Art",
+  question: "Who painted American Gothic?",
+  choices: ["Grant Wood", "Edward Hopper", "Andy Warhol", "Jackson Pollock"],
+  answerIndex: 0,
+  hangmanHint: "The country where the painting was made.",
+  hangmanAnswer: "United States",
+});
 
 // History questions
-quizy.addQuestion(
-  new Question({
-    id: "history01",
-    category: "History",
-    question: "Who was the first President of the United States?",
-    choices: [
-      "George Washington",
-      "Thomas Jefferson",
-      "John Adams",
-      "Abraham Lincoln",
-    ],
-    answerIndex: 0,
-    hangmanHint: "The capital city of the United States.",
-    hangmanAnswer: "Washington",
-  }),
-);
-quizy.addQuestion(
-  new Question({
-    id: "history02",
-    category: "History",
-    question: "Which ancient civilization built the pyramids of Giza?",
-    choices: ["Egyptians", "Romans", "Greeks", "Persians"],
-    answerIndex: 0,
-    hangmanHint: "The river that was important to ancient Egypt.",
-    hangmanAnswer: "Nile",
-  }),
-);
-quizy.addQuestion(
-  new Question({
-    id: "history03",
-    category: "History",
-    question: "Who was the famous queen of ancient Egypt?",
-    choices: ["Cleopatra", "Elizabeth I", "Victoria", "Catherine"],
-    answerIndex: 0,
-    hangmanHint: "The empire Cleopatra was part of.",
-    hangmanAnswer: "Egypt",
-  }),
-);
-quizy.addQuestion(
-  new Question({
-    id: "history04",
-    category: "History",
-    question: "Which empire built the Colosseum?",
-    choices: [
-      "Roman Empire",
-      "Greek Empire",
-      "Ottoman Empire",
-      "Persian Empire",
-    ],
-    answerIndex: 0,
-    hangmanHint: "The city where the Colosseum is located.",
-    hangmanAnswer: "Rome",
-  }),
-);
-quizy.addQuestion(
-  new Question({
-    id: "history05",
-    category: "History",
-    question:
-      "The Great Wall was built mainly to protect China from which group?",
-    choices: ["Mongols", "Romans", "Vikings", "Persians"],
-    answerIndex: 0,
-    hangmanHint: "The country where the Great Wall is located.",
-    hangmanAnswer: "China",
-  }),
-);
-quizy.addQuestion(
-  new Question({
-    id: "history06",
-    category: "History",
-    question:
-      "Who led the civil rights movement in the United States during the 1960s?",
-    choices: [
-      "Martin Luther King Jr.",
-      "Malcolm X",
-      "Rosa Parks",
-      "Nelson Mandela",
-    ],
-    answerIndex: 0,
-    hangmanHint:
-      "The famous speech he delivered beginning with 'I Have a Dream'.",
-    hangmanAnswer: "Dream",
-  }),
-);
+quizy.addQuestion({
+  id: "his01",
+  category: "History",
+  question: "Who was the first President of the United States?",
+  choices: [
+    "George Washington",
+    "Abraham Lincoln",
+    "Thomas Jefferson",
+    "John Adams",
+  ],
+  answerIndex: 0,
+  hangmanHint: "The capital city of the United States.",
+  hangmanAnswer: "Washington",
+});
+quizy.addQuestion({
+  id: "his02",
+  category: "History",
+  question: "Where did the Titanic sink?",
+  choices: ["Atlantic Ocean", "Pacific Ocean", "Indian Ocean", "Arctic Ocean"],
+  answerIndex: 0,
+  hangmanHint: "The ocean where the Titanic sank.",
+  hangmanAnswer: "Atlantic",
+});
+quizy.addQuestion({
+  id: "his03",
+  category: "History",
+  question: "Who discovered America?",
+  choices: [
+    "Christopher Columbus",
+    "Ferdinand Magellan",
+    "Marco Polo",
+    "James Cook",
+  ],
+  answerIndex: 0,
+  hangmanHint: "The country Columbus sailed for.",
+  hangmanAnswer: "Spain",
+});
+quizy.addQuestion({
+  id: "his04",
+  category: "History",
+  question: "What wall divided Berlin?",
+  choices: ["Berlin Wall", "Great Wall", "Hadrian's Wall", "Iron Curtain"],
+  answerIndex: 0,
+  hangmanHint: "The city where the wall was located.",
+  hangmanAnswer: "Berlin",
+});
+quizy.addQuestion({
+  id: "his05",
+  category: "History",
+  question: "Who was known as the Maid of Orleans?",
+  choices: [
+    "Joan of Arc",
+    "Marie Antoinette",
+    "Catherine the Great",
+    "Cleopatra",
+  ],
+  answerIndex: 0,
+  hangmanHint: "The country Joan of Arc fought for.",
+  hangmanAnswer: "France",
+});
+quizy.addQuestion({
+  id: "his06",
+  category: "History",
+  question: "Which empire built the Colosseum?",
+  choices: ["Roman Empire", "Greek Empire", "Persian Empire", "Ottoman Empire"],
+  answerIndex: 0,
+  hangmanHint: "The city where the Colosseum is located.",
+  hangmanAnswer: "Rome",
+});
+quizy.addQuestion({
+  id: "his07",
+  category: "History",
+  question: "Who was the first man to walk on the moon?",
+  choices: ["Neil Armstrong", "Buzz Aldrin", "Yuri Gagarin", "John Glenn"],
+  answerIndex: 0,
+  hangmanHint: "The name of the space mission.",
+  hangmanAnswer: "Apollo",
+});
+quizy.addQuestion({
+  id: "his08",
+  category: "History",
+  question: "Where were the pyramids built?",
+  choices: ["Egypt", "Mexico", "Peru", "India"],
+  answerIndex: 0,
+  hangmanHint: "The river near the pyramids.",
+  hangmanAnswer: "Nile",
+});
+quizy.addQuestion({
+  id: "his09",
+  category: "History",
+  question: "Who was the emperor of France?",
+  choices: ["Napoleon", "Louis XVI", "Charlemagne", "Henry IV"],
+  answerIndex: 0,
+  hangmanHint: "The island where Napoleon was exiled.",
+  hangmanAnswer: "Elba",
+});
+quizy.addQuestion({
+  id: "his10",
+  category: "History",
+  question: "Where did World War II end in Europe?",
+  choices: ["Germany", "France", "Italy", "Poland"],
+  answerIndex: 0,
+  hangmanHint: "The capital city of Germany.",
+  hangmanAnswer: "Berlin",
+});
+quizy.addQuestion({
+  id: "his11",
+  category: "History",
+  question: "Where was the Statue of Liberty built?",
+  choices: ["USA", "France", "UK", "Germany"],
+  answerIndex: 0,
+  hangmanHint: "The city where the Statue of Liberty is located.",
+  hangmanAnswer: "New York",
+});
+quizy.addQuestion({
+  id: "his12",
+  category: "History",
+  question: "Where did World War II start?",
+  choices: ["Europe", "Asia", "Africa", "America"],
+  answerIndex: 0,
+  hangmanHint: "The country that started World War II.",
+  hangmanAnswer: "Nazi Germany",
+});
 
 // Stories questions
-quizy.addQuestion(
-  new Question({
-    id: "stories01",
-    category: "Stories",
-    question: "Who wrote 'Harry Potter'?",
-    choices: ["J.K. Rowling", "J.R.R. Tolkien", "C.S. Lewis", "Rick Riordan"],
-    answerIndex: 0,
-    hangmanHint: "The magical school Harry attends.",
-    hangmanAnswer: "Hogwarts",
-  }),
-);
-quizy.addQuestion(
-  new Question({
-    id: "stories02",
-    category: "Stories",
-    question: "Who wrote 'The Hobbit'?",
-    choices: [
-      "J.R.R. Tolkien",
-      "C.S. Lewis",
-      "George R.R. Martin",
-      "J.K. Rowling",
-    ],
-    answerIndex: 0,
-    hangmanHint: "The creature guarding treasure in the story.",
-    hangmanAnswer: "Dragon",
-  }),
-);
-quizy.addQuestion(
-  new Question({
-    id: "stories03",
-    category: "Stories",
-    question: "Which character's nose grows longer when he lies?",
-    choices: ["Pinocchio", "Peter Pan", "Aladdin", "Cinderella"],
-    answerIndex: 0,
-    hangmanHint: "The man who created Pinocchio.",
-    hangmanAnswer: "Geppetto",
-  }),
-);
-quizy.addQuestion(
-  new Question({
-    id: "stories04",
-    category: "Stories",
-    question: "Who wrote 'Alice in Wonderland'?",
-    choices: [
-      "Lewis Carroll",
-      "Roald Dahl",
-      "Beatrix Potter",
-      "Hans Christian Andersen",
-    ],
-    answerIndex: 0,
-    hangmanHint: "The mysterious cat that appears and disappears.",
-    hangmanAnswer: "Cheshire",
-  }),
-);
-quizy.addQuestion(
-  new Question({
-    id: "stories05",
-    category: "Stories",
-    question: "Who wrote 'Romeo and Juliet'?",
-    choices: [
-      "William Shakespeare",
-      "Charles Dickens",
-      "Jane Austen",
-      "Mark Twain",
-    ],
-    answerIndex: 0,
-    hangmanHint: "The Italian city where Romeo and Juliet lived.",
-    hangmanAnswer: "Verona",
-  }),
-);
-quizy.addQuestion(
-  new Question({
-    id: "stories06",
-    category: "Stories",
-    question: "Who wrote 'The Little Prince'?",
-    choices: [
-      "Antoine de Saint-Exupéry",
-      "Victor Hugo",
-      "Jules Verne",
-      "Albert Camus",
-    ],
-    answerIndex: 0,
-    hangmanHint: "The flower the prince loves.",
-    hangmanAnswer: "Rose",
-  }),
-);
+quizy.addQuestion({
+  id: "story01",
+  category: "Stories",
+  question: "Who wrote Harry Potter?",
+  choices: [
+    "J.K. Rowling",
+    "J.R.R. Tolkien",
+    "C.S. Lewis",
+    "George R.R. Martin",
+  ],
+  answerIndex: 0,
+  hangmanHint: "The school where Harry studies magic.",
+  hangmanAnswer: "Hogwarts",
+});
+quizy.addQuestion({
+  id: "story02",
+  category: "Stories",
+  question: "Who wrote The Hobbit?",
+  choices: ["J.R.R. Tolkien", "C.S. Lewis", "J.K. Rowling", "George Orwell"],
+  answerIndex: 0,
+  hangmanHint: "The creature Bilbo is.",
+  hangmanAnswer: "Hobbit",
+});
+quizy.addQuestion({
+  id: "story03",
+  category: "Stories",
+  question: "Who wrote Alice in Wonderland?",
+  choices: ["Lewis Carroll", "Roald Dahl", "Dr. Seuss", "Mark Twain"],
+  answerIndex: 0,
+  hangmanHint: "The place Alice falls into.",
+  hangmanAnswer: "Wonderland",
+});
+quizy.addQuestion({
+  id: "story04",
+  category: "Stories",
+  question: "Who wrote The Lion, the Witch and the Wardrobe?",
+  choices: ["C.S. Lewis", "J.R.R. Tolkien", "J.K. Rowling", "Roald Dahl"],
+  answerIndex: 0,
+  hangmanHint: "The magical land inside the wardrobe.",
+  hangmanAnswer: "Narnia",
+});
+quizy.addQuestion({
+  id: "story05",
+  category: "Stories",
+  question: "Who wrote Cinderella?",
+  choices: [
+    "Charles Perrault",
+    "Brothers Grimm",
+    "Hans Christian Andersen",
+    "Roald Dahl",
+  ],
+  answerIndex: 0,
+  hangmanHint: "The glass item Cinderella loses.",
+  hangmanAnswer: "Slipper",
+});
+quizy.addQuestion({
+  id: "story06",
+  category: "Stories",
+  question: "Who wrote Snow White?",
+  choices: [
+    "Brothers Grimm",
+    "Hans Christian Andersen",
+    "Charles Perrault",
+    "Roald Dahl",
+  ],
+  answerIndex: 0,
+  hangmanHint: "The place where the dwarfs live.",
+  hangmanAnswer: "Cottage",
+});
+quizy.addQuestion({
+  id: "story07",
+  category: "Stories",
+  question: "Who wrote Peter Pan?",
+  choices: ["J.M. Barrie", "C.S. Lewis", "J.R.R. Tolkien", "Roald Dahl"],
+  answerIndex: 0,
+  hangmanHint: "The place Peter Pan lives.",
+  hangmanAnswer: "Neverland",
+});
+quizy.addQuestion({
+  id: "story08",
+  category: "Stories",
+  question: "Who wrote The Little Mermaid?",
+  choices: [
+    "Hans Christian Andersen",
+    "Brothers Grimm",
+    "Charles Perrault",
+    "Dr. Seuss",
+  ],
+  answerIndex: 0,
+  hangmanHint: "The place where the mermaid lives.",
+  hangmanAnswer: "Ocean",
+});
+quizy.addQuestion({
+  id: "story09",
+  category: "Stories",
+  question: "Who wrote Beauty and the Beast?",
+  choices: [
+    "Gabrielle-Suzanne Barbot",
+    "Charles Perrault",
+    "Brothers Grimm",
+    "Hans Andersen",
+  ],
+  answerIndex: 0,
+  hangmanHint: "The place where the Beast lives.",
+  hangmanAnswer: "Castle",
+});
+quizy.addQuestion({
+  id: "story10",
+  category: "Stories",
+  question: "Who wrote Pinocchio?",
+  choices: ["Carlo Collodi", "Hans Andersen", "Brothers Grimm", "Roald Dahl"],
+  answerIndex: 0,
+  hangmanHint: "What Pinocchio is made of.",
+  hangmanAnswer: "Wood",
+});
+quizy.addQuestion({
+  id: "story11",
+  category: "Stories",
+  question: "Who wrote Peter Pan?",
+  choices: ["J.M. Barrie", "C.S. Lewis", "J.R.R. Tolkien", "Roald Dahl"],
+  answerIndex: 0,
+  hangmanHint: "The magical place where Peter Pan lives.",
+  hangmanAnswer: "Never Land",
+});
+quizy.addQuestion({
+  id: "story12",
+  category: "Stories",
+  question: "Who wrote Aladdin?",
+  choices: ["Anonymous", "Brothers Grimm", "Charles Perrault", "Hans Andersen"],
+  answerIndex: 0,
+  hangmanHint: "The object that grants wishes.",
+  hangmanAnswer: "Magic Lamp",
+});
